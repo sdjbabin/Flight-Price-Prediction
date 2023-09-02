@@ -21,7 +21,7 @@ Outliers in the data are detected and removed to improve model accuracy. The rem
 
 # Data Encoding:
 Categorical variables are encoded into numerical form using one-hot encoding. This step involves creating dummy variables for features like airline, source city, destination city, departure time, stops, and class.
-#Model Building:
+# Model Building:
 The data is split into training and testing sets using the train-test split method.
 A Linear Regression model is created and trained on the training data.
 The model's performance is evaluated using the R-squared score and K-fold cross-validation.
