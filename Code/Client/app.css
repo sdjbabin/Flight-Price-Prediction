@@ -1,0 +1,345 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  position: relative; /* Required for z-index to work */
+  z-index: 1; /* Place the content on top of the pseudo-element */
+  background-color: #acf2ad; /* Background color for the content area */
+  padding: 20px;
+  text-align: center;
+}
+
+.content::before {
+  content: "";
+  background-image: url("background.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the pseudo-element behind the content */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+/* Styling result*/
+.result{
+  background: transparent;
+  color: #072043;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px;
+
+}
+
+/*date picker*/
+/* Style the input[type="date"] element */
+input[type="date"] {
+  padding: 8px;
+  border: 1px solid rgb(79, 68, 204); /* Set border color to #4c4 */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #ceebd5; /* Set background color to #ceebd5 */
+  color: #05074e; /* Set text color to #0a6144 */
+}
+
+/* Remove the default arrow button in some browsers */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Style the calendar icon (optional) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: #05074e; /* Set text color for the calendar icon */
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px;
+}
+
+/* Style the input when it's in focus */
+input[type="date"]:focus {
+  border: 2px dashed rgb(68, 88, 204);
+  background-color: rgb(187, 210, 255);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Style the input when it's invalid */
+input[type="date"]:invalid {
+  border: 2px solid #05074e;
+}
+
+/* For radio button*/
+.radio-toolbar {
+  margin: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ceebd5;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    color: #05074e;
+    font-size: 16px;
+    border: 2px solid #05074e;
+    border-radius: 4px;
+}
+
+.radio-toolbar label:hover {
+  background-color: rgb(221, 232, 255);
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: rgb(145, 242, 255);
+    border-color: #05074e;
+}
+
+
+
+.wave{
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  } */
+
+.img{
+    padding: 100px;
+    margin: 20px; /* Adjust the margin as needed */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use viewport height for full-screen */
+  }
+  
+  .login-content {
+    width: 300pt;
+    margin: auto; /* Center horizontally using auto margins */
+    border: 5px solid linear-gradient(to right, #32be8f, #38d39f, #3242be);;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    max-height: 70vh; /* Set a maximum height for the form container */
+    overflow-y: auto; /* Enable vertical scrolling when the form content exceeds the container's height */
+  }
+
+  
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */ /* Remove this line to allow the form to expand vertically */
+  }
+  
+
+.img img{
+  width: 500px;
+}
+
+form{
+  width: auto;
+    height: auto;
+}
+
+.login-content img{
+    height: 100px;
+}
+
+.login-content h2{
+  margin: 15px 0;
+  color: #072043;
+  text-transform: uppercase;
+  font-size: 2.0rem;
+}
+
+.login-content .input-div{
+  position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    /* border-bottom: 2px solid #d9d9d9; */
+}
+
+
+
+.login-content .input-div.one{
+  margin-top: 0;
+}
+
+
+a{
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #999;
+  font-size: 0.9rem;
+  transition: .3s;
+}
+
+a:hover{
+  color: #3854d3;
+}
+
+.btn{
+  display: block;
+    width: 250pt;
+    height: 30pt;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #3242be);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+}
+.btn:hover{
+  background-position: right;
+}
+
+
+/* dorop down*/
+h3{
+    text-align: left;
+    width: 200pt;
+    color:#072043;
+}
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #ceebd5;
+    background-image: none;
+    flex: 1;
+    width: 250pt;
+    height: 30pt;
+    padding: 0 .5em;
+    color:#05074e;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+ }
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+ .select:hover::after {
+    color: #23b499;
+ }
+
+  
+@media screen and (max-width: 1050px){
+  .container{
+    grid-gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  form{
+    width: 290px;
+  }
+
+  .login-content h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+  }
+
+  .img img{
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+
+  .img{
+    display: none;
+  }
+
+  .wave{
+    display: none;
+  }
+
+  .login-content{
+    justify-content: center;
+  }
+}

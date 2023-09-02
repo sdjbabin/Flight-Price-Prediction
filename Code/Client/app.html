@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flight Price Prediction</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="app.css">
+    </head>
+<body>
+    <div class="content">
+	<img class="wave" src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/wave.png">
+	<div class="container" style="align-items: center;">
+		<div class="img">
+			<img src="side_pic.png">
+		</div>
+		<div class="login-content" style="align-items: center;" data-simplebar>
+			<form class="form-container" id="form" method="POST" onsubmit=onClickedEstimatePrice() style="align-items: center;">
+                <!-- Form validation so that the required works -->
+                <script>
+                    //Get form element
+                var form=document.getElementById("form");
+                function submitForm(event){
+                //Preventing page refresh
+                event.preventDefault();
+                }
+                form.addEventListener('submit', submitForm);
+                </script>
+
+                <img src="logo_f.png">
+                <h2 class="title">Flight Fare-Cast </h2>
+           		<div class="input-div one">
+           		   <div class="div">
+           		   		<h3>Airline</h3>
+                            <select name="airline" id="airline" class="input" required>
+                                <option value="spicejet">Spice Jet</option>
+                                <option value="air_india">Air India</option>
+                                <option value="airaisa">Air Asia</option>
+                                <option value="go_first">Go First</option>
+                                <option value="vistara">Vistara</option>
+                                <option value="indigo">Indigo</option>
+                           </select>
+           		   </div>
+           		</div>
+           		<div class="input-div one">
+           		   <div class="div">
+                      <h3>Source City</h3>
+           		    	<select name="source" id="source" class="input"  required >
+                            <option value="bangalore_s">Bangalore</option>
+                            <option value="chennai_s">Chennai</option>
+                            <option value="hyderabad_s">Hyderabad</option>
+                            <option value="kolkata_s">Kolkata</option>
+                            <option value="mumbai_s">Mumbai</option>
+                            <option value="delhi_s">Delhi</option>
+                        </select>
+            	   </div>
+            	</div>
+                <div class="input-div one">
+                    <div class="div">
+                    <h3>Destination City</h3>
+                        <select name="dest" id="Destination" class="input"   required>
+                            <option selected value="" >Choose Destination City</option>
+                            <option value="bangalore_d">Bangalore</option>
+                            <option value="chennai_d">Chennai</option>
+                            <option value="hyderabad_d">Hyderabad</option>
+                            <option value="kolkata_d">Kolkata</option>
+                            <option value="mumbai_d">Mumbai</option>
+                            <option value="delhi_d">Delhi</option>
+                          </select>
+                 </div>
+              </div>
+              <div class="input-div one">
+                <div class="div">
+                <h3>Departure Time</h3>
+                <select name="dept" id="Departure" class="input" required>
+                    <option selected value="" >Choose Departure Time</Source></option>
+                    <option value="afternoon_d">Afternoon</option>
+                    <option value="earlymorning_d">Early Morning</option>
+                    <option value="evening_d">Evening</option>
+                    <option value="late_night_d">Late night</option>
+                    <option value="morning_d">Morning</option>
+                    <option value="night_d">Night</option>
+                  </select>
+             </div>
+          </div>
+
+           <div class="input-div one">
+            <div class="div">
+            <h3>Arrival Time</h3>
+            <select name="arrv" id="Arrival" class="input">
+                <option selected value="" >Choose arrival Time</Source></option>
+                <option value="afternoon_a">Afternoon</option>
+                <option value="earlymorning_a">Early Morning</option>
+                <option value="evening_a">Evening</option>
+                <option value="late_night_a">Late night</option>
+                <option value="morning_a">Morning</option>
+                <option value="night_a">Night</option>
+              </select>
+            </div>
+           </div>
+            
+            <div class="radio-toolbar">
+                <h3>Number of Stops</h3>
+                <input type="radio" id="radio-stop-0" name="stop" value="zero" required/>
+                <label for="radio-stop-0">0</label>
+                <input type="radio" id="radio-stop-1" name="stop" value="one" />
+                <label for="radio-stop-1">1</label>
+                <input type="radio" id="radio-stop-2" name="stop" value="two_or_more"/>
+                <label for="radio-stop-2">2 or More</label>
+           </div>
+  
+            
+            <div class="radio-toolbar">
+                <h3>Select Class</h3>
+                <input type="radio" id="radio-class-1" name="class" value="Economy" required/>
+                <label for="radio-class-1">Economy</label>
+                <input type="radio" id="radio-class-2" name="class" value="Business"/>
+                <label for="radio-class-2">Business</label>
+              
+           </div>
+
+            <div class="radio-toolbar">
+                <h3>Select date of travel</h3>
+                <input type="date" id="travelDate" required>
+                <p id="daysRemaining"></p>
+                
+                <!-- Store days remaining in a hidden input -->
+                <input type="hidden" id="daysRemainingInput" name="daysRemaining">
+                
+                <script>
+                    // Get tomorrow's date
+                    const tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    tomorrow.setHours(0, 0, 0, 0); // Set time to midnight
+                    
+                    // Set the minimum date for the input field
+                    const dateInput = document.getElementById('travelDate');
+                    dateInput.min = tomorrow.toISOString().split('T')[0];
+                    
+                    // Display and store days remaining in the hidden input
+                    dateInput.addEventListener('change', function() {
+                        const selectedDate = new Date(this.value);
+                        selectedDate.setHours(0, 0, 0, 0); // Set time to midnight
+                        
+                        const timeDifference = selectedDate.getTime() - tomorrow.getTime();
+                        const daysRemaining = Math.ceil(timeDifference / (1000 * 3600 * 24)) + 1;
+                        
+                        const daysRemainingElement = document.getElementById('daysRemaining');
+                        daysRemainingElement.textContent = `Days remaining until travel: ${daysRemaining}`;
+                        
+                        const daysRemainingInput = document.getElementById('daysRemainingInput');
+                        daysRemainingInput.value = daysRemaining;
+                    });
+                </script>
+           
+        </div>
+                <div class="input-div one">
+                <button type="submit" class="btn">Estimate Price</button>
+                </div>
+                <div id="uiEstimatedPrice" class="result"></div>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
