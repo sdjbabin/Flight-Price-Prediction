@@ -28,11 +28,11 @@ The model's performance is evaluated using the R-squared score and K-fold cross-
 
 # Grid Search for Model Selection:
 
-# Grid search is performed to find the best regression model among Linear Regression, Lasso, and Decision Tree Regressor. Various hyperparameters are tuned to optimize model performance.
+Grid search is performed to find the best regression model among Linear Regression, Lasso, and Decision Tree Regressor. Various hyperparameters are tuned to optimize model performance.
 
 # Price Prediction:
 
-# The Decision Tree Regressor model is selected as the best model and used to predict flight prices.
+### The Decision Tree Regressor model is selected as the best model and used to predict flight prices.
 A function is defined to take input features (e.g., airline, source city, etc.) and predict the flight price.
 
 # Model Evaluation:
