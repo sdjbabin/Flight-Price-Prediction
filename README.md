@@ -1,6 +1,8 @@
 # Flight-Price-Prediction
 "Flight Price Prediction: GitHub repo for ML-based airline ticket price forecasting. Collect, preprocess data, train models, deploy, and evaluate. Open-source under MIT License."
 
+Python Codes Contains Files 1. flight.ipynb for modeling code 2. eda_flight.ipynb for exploratory data analysis
+
 # Steps for opening the api through python flask in local server
 ### Step 1: 
 Download the folder named "Code"
