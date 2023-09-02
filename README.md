@@ -3,9 +3,9 @@
 
 # Steps for opening the api through python flask in local server
 ### Step 1: 
-Download the folders named "Code"
+Download the folder named "Code"
 ### Step 2:
-Run Command Prompt in the Code folder, and type "python server.py"
+Run Command Prompt in the Code folder, and run the following command "python server.py"
 ### Step 3:
 Go to the folder named "Client" inside the "Code" folder and click on "app.html" to preview the api on your local host server.
 
