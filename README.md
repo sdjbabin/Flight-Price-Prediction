@@ -3,6 +3,8 @@
 
 Python Codes Contains Files 1. flight.ipynb for modeling code 2. eda_flight.ipynb for exploratory data analysis
 
+KAGGLE LINK FOR VIEWING THE CODE AND ITS OUTPUT: https://www.kaggle.com/code/sohamchatterjeef/flight-price-forecaster?scriptVersionId=141777246
+
 # Steps for opening the api through python flask in local server
 ### Step 1: 
 Download the folder named "Code"
